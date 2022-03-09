@@ -1,4 +1,4 @@
-## MERN_Stack
+## MERN Stack
 
 Mar 7th - Apr 1st
 
