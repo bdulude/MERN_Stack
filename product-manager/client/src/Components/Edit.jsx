@@ -54,7 +54,7 @@ const Input = (props) => {
                 name="title"
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
-                value={title || ""}
+                value={title}
             />
             <br />
             <label htmlFor="price">Price: </label>
@@ -63,7 +63,7 @@ const Input = (props) => {
                 name="price"
                 type="number"
                 onChange={(e) => setPrice(e.target.value)}
-                value={price || 0}
+                value={price}
             />
             <br />
             <label htmlFor="description">Description: </label>
@@ -72,7 +72,7 @@ const Input = (props) => {
                 name="description"
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
-                value={description || ""}
+                value={description}
             />
             <br />
             <input type="submit" value="Edit" />
