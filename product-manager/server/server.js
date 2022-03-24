@@ -11,7 +11,7 @@ app.use(express.json(), cors(), express.urlencoded({extended:true}));
 require('./config/mongoose.config')(DB);
 
 // Routes
-require('./routes/joke.routes')(app);
+require('./routes/product.routes')(app);
 
 // Listen
 app.listen(PORT, () => console.log('Express is listening!'))

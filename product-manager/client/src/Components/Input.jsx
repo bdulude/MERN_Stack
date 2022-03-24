@@ -13,17 +13,20 @@ const Input = (props) => {
             price: price,
             description: description
         }
-        console.log(product);
+        // console.log(product);
         axios.post('http://localhost:8000/api/products', product)
             .then( res => {
                 console.log(res.data);
                 console.log("Post Success");
+                props.setProductList([...props.productList, res.data]);
+                setTitle("");
+                setPrice(0);
+                setDescription("");
             })
             .catch(err => {
                 console.log(err.data);
                 console.log("Post Error");
             })
-        // props.onNewTodo(todo);
     }
 
     return (
