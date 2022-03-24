@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Products = (props) => {
     // const [productList, setProductList] = useState([]);
@@ -14,7 +14,7 @@ const Products = (props) => {
                 // console.log(productList);
             })
             .catch((err) => {
-                console.log("Error Getting Products");
+                console.log("GET Products Failed");
                 console.log(err.data);
             });
     }, []);
@@ -27,8 +27,13 @@ const Products = (props) => {
                 return (
                     <div key={idx}>
                         <h4>
-                            <Link to={'/' + product._id}>{product.title}</Link>
+                            <Link to={"/" + product._id}>{product.title}</Link>
                         </h4>
+                        <button
+                            onClick={() => props.deleteProduct(product._id)}
+                        >
+                            Delete
+                        </button>
                     </div>
                 );
             })}
